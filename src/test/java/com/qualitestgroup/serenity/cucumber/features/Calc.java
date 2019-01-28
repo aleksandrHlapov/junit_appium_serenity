@@ -1,9 +1,6 @@
 package com.qualitestgroup.serenity.cucumber.features;
 
-import cucumber.api.CucumberOptions;
-import net.serenitybdd.cucumber.CucumberWithSerenity;
 import net.serenitybdd.junit.runners.SerenityRunner;
-import net.thucydides.core.annotations.Managed;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
