@@ -1,4 +1,4 @@
-package com.qualitestgroup.serenity.cucumber.features;
+package features;
 
 import net.serenitybdd.junit.runners.SerenityRunner;
 import org.junit.After;
