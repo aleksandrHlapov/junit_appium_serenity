@@ -1,7 +1,6 @@
 package features;
 
 import net.serenitybdd.junit.runners.SerenityRunner;
-import net.thucydides.core.annotations.Managed;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -23,10 +22,9 @@ import static org.assertj.core.api.Assertions.assertThat;
 @RunWith(SerenityRunner.class)
 public class Calc {
 
-	@Managed(driver = "appium")
 	WebDriver driver;
 
-	/*@Before
+	@Before
 	public void setUp() {
 		DesiredCapabilities capabilities = new DesiredCapabilities();
 		capabilities.setCapability("deviceName", "707a6877");
@@ -45,7 +43,7 @@ public class Calc {
 
 		driver = new RemoteWebDriver(url, capabilities);
 		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
-	}*/
+	}
 
 	@Test
 	public void Sum() {
@@ -62,12 +60,12 @@ public class Calc {
 		num5Button.click();
 		equalSignButton.click();
 
-		String actualResult = driver.findElement(By.id("txtCalc")).getText();
+		String actualResult = driver.findElement(By.xpath("//android.widget.EditText[contains(@resource-id,\"txtCalc\")]")).getText();
 		assertThat(actualResult).isEqualToIgnoringCase("7");
 	}
 
-	/*@After
+	@After
 	public void endTest() {
 		driver.quit();
-	}*/
+	}
 }
